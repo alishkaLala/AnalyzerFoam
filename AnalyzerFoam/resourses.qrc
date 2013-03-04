@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>configuration.ini</file>
+        <file>4x.jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
+</RCC>

@@ -1,0 +1,36 @@
+#ifndef CANAL_CONTUR_H
+#define CANAL_CONTUR_H
+
+#include <QThread>
+#include <QMessageBox>
+#include <QDebug>
+
+
+#include <cv.h>
+#include <highgui.h>
+class Canal_contur : public QThread
+{
+    Q_OBJECT
+public:
+    explicit Canal_contur(QObject *parent = 0);
+    explicit Canal_contur(const IplImage* in, IplImage* out,int gaus, double threshold1=0, double threshold2=0,QObject *parent = 0);
+
+signals:
+
+public slots:
+
+
+private:
+    void run();
+    void normalize(const IplImage* in, IplImage* out);
+
+    IplImage* pr_1;
+    IplImage* pr_2;
+    const  IplImage *in;
+    IplImage *out;
+    int gaus; double threshold1; double threshold2;
+    IplImage* dst;
+    IplConvKernel* Kern;
+};
+
+#endif // CANAL_CONTUR_H
