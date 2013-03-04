@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'settingcaptureframe.h'
 **
-** Created: Mon 4. Mar 20:34:42 2013
+** Created: Tue 5. Mar 00:14:57 2013
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
