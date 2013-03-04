@@ -106,15 +106,45 @@ void SettingCaptureFrame::initSetting(){
 
 void SettingCaptureFrame::initialConnections()
 {
+        //connect(ui->lineEdit,SIGNAL(textEdited(QString)),this,SLOT(validMm()));
+        //connect(ui->lineEdit,SIGNAL(editingFinished()),this,SLOT(validMmAndSet()));
         connect(ui->lineEdit,SIGNAL(textEdited(QString)),this,SLOT(validMmAndSet()));
         connect(ui->lineEdit,SIGNAL(cursorPositionChanged(int,int)),this,SLOT(toolTipMm()));
+
+
+
+
+        connect(ui->widthCaptureWindow,SIGNAL(valueChanged(int)),this,SLOT(calculateCaptureSizeFrame(int)))  ;
         cvSetMouseCallback( this->nameCaptureFrame.toAscii().constData(),myMouseCallback, (void*)this->frame);
+        // connect (this->timerCapture, SIGNAL ( timeout () ), SLOT ( timerEvent_showCapture ( ) ) );
         connect(this,SLOT(hide()),this,SLOT(stopWork()));
+        connect ( ui->checkBox,SIGNAL(toggled(bool)), this, SLOT (setValueShowing (bool)));
 
 
 
 
 }
+void SettingCaptureFrame::setValueShowing (bool value)
+{
+        qDebug ()<<value;
+        if (value){
+                connect(this->worker,SIGNAL(imageCalculateReady(IplImage*)),this,SLOT(imageCalculatingGetting(IplImage*)));
+
+        }
+        else {
+                disconnect(this->worker,SIGNAL(imageCalculateReady(IplImage*)),this,SLOT(imageCalculatingGetting(IplImage*)));
+        }
+
+}
+
+void  SettingCaptureFrame::imageCalculatingGetting (IplImage *img)
+{
+           cvNamedWindow("calculation image", CV_WINDOW_AUTOSIZE);
+           cvShowImage("calculation image",img);
+
+
+}
+
 void SettingCaptureFrame::myMouseCallback( int event, int x, int y, int flags, void* param)
 {
         SettingCaptureFrame::obj->myMouseCallbackDelegated(event,x,y,flags,param);

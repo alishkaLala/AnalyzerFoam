@@ -11,8 +11,8 @@
 
 #include <iostream>
 
-#include  <imagecalculate.h>
 
+#include "canal_contur.h"
 class ImageProcessing : public QThread
 {
     Q_OBJECT
@@ -25,6 +25,7 @@ public:
 signals:
     void test();
     void imageIsReady( IplImage *img);
+    void imageCalculateReady( IplImage *img);
     void infoIsReady(double count, double diametr);
 
 public slots:
@@ -37,6 +38,7 @@ private:
     bool calculateImage;
     unsigned long int  kadrProssesd;
     int choisedCapture;
+    double k1,k2;
 
 };
 

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'settingcaptureframe.h'
 **
-** Created: Tue 5. Mar 00:14:57 2013
+** Created: Tue 5. Mar 01:39:08 2013
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_SettingCaptureFrame[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -48,7 +48,9 @@ static const uint qt_meta_data_SettingCaptureFrame[] = {
      351,   20,   20,   20, 0x08,
      380,   20,   20,   20, 0x08,
      406,   20,   20,   20, 0x08,
-     439,  435,   20,   20, 0x0a,
+     435,   20,   20,   20, 0x08,
+     461,  457,   20,   20, 0x08,
+     496,  457,   20,   20, 0x0a,
 
        0        // eod
 };
@@ -68,7 +70,9 @@ static const char qt_meta_stringdata_SettingCaptureFrame[] = {
     "on_SettingCansel_clicked()\0"
     "on_SettingStandart_clicked()\0"
     "on_SettingApply_clicked()\0"
-    "on_pushButtonStart_clicked()\0img\0"
+    "on_pushButtonStart_clicked()\0"
+    "setValueShowing(bool)\0img\0"
+    "imageCalculatingGetting(IplImage*)\0"
     "imageGetting(IplImage*)\0"
 };
 
@@ -118,10 +122,12 @@ int SettingCaptureFrame::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 14: on_SettingStandart_clicked(); break;
         case 15: on_SettingApply_clicked(); break;
         case 16: on_pushButtonStart_clicked(); break;
-        case 17: imageGetting((*reinterpret_cast< IplImage*(*)>(_a[1]))); break;
+        case 17: setValueShowing((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 18: imageCalculatingGetting((*reinterpret_cast< IplImage*(*)>(_a[1]))); break;
+        case 19: imageGetting((*reinterpret_cast< IplImage*(*)>(_a[1]))); break;
         default: ;
         }
-        _id -= 18;
+        _id -= 20;
     }
     return _id;
 }

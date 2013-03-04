@@ -117,7 +117,7 @@ void MainWindow::initValues()
 // menu capture
 void MainWindow::captureOff()
 {
-      this->worker->working (false);
+        this->worker->working (false);
 }
 void MainWindow::captureChoised(int value)
 {
@@ -183,7 +183,7 @@ void MainWindow::infoGetting(double count, double diametr){
 
         if (gr->isVisible ())
                 {
-                          this->gr->genCoords(count,diametr);
+                        this->gr->genCoords(count,diametr);
                 }
 
 }

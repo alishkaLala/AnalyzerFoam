@@ -144,9 +144,11 @@ private slots:
 
     void on_SettingApply_clicked();
     void on_pushButtonStart_clicked();
-
+    void setValueShowing(bool);
+    void imageCalculatingGetting(IplImage *img);
 public slots:
       void imageGetting(IplImage *img);
+
 };
 
 #endif // SETTINGCAPTUREFRAME_H
