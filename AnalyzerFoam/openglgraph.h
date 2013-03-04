@@ -9,6 +9,7 @@
 #include <QtOpenGL>
 #include <QtGui>
 #include <imageprocessing.h>
+#include <QEvent>
 
 const int max_cnt = 200;
 
@@ -24,6 +25,7 @@ public:
         myPoints * pol;
         GLfloat jjj;
         OpenglGraph(ImageProcessing *worker, QWidget *parent = 0);
+        void showEvent(QShowEvent *event);
 protected:
         virtual void initializeGL();
         virtual void resizeGL(int width, int height);

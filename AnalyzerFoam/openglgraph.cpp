@@ -23,6 +23,15 @@ OpenglGraph::OpenglGraph(ImageProcessing *worker, QWidget *parent): QGLWidget(pa
 
 }
 
+void OpenglGraph::showEvent (QShowEvent *event)
+{
+        this->defaultScene ();
+        for (int i=0; i < max_cnt-1; i++) {
+                pol[i].x = 0.0;
+                pol[i].y = 0.0;
+        }
+}
+
 void OpenglGraph::initializeGL()
 {
         qglClearColor(Qt::black);

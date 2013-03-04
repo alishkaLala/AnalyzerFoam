@@ -31,7 +31,7 @@ void MainWindow::showEvent(QShowEvent *event){
         this->setFont(configInformation::getfont());
         this->repaint();
         this->readSettingCaprure();
-        disconnect (this->worker,SIGNAL(imageIsReady( IplImage*)),this->settingCaptureFrame,SLOT(imageGetting( IplImage*)));
+
         if(ui->processingImageShow->isChecked ())
                 {
                         this->setSartStopImegeGetting (true);
@@ -180,7 +180,12 @@ void MainWindow::imageGetting(IplImage *img)
 
 }
 void MainWindow::infoGetting(double count, double diametr){
-        this->gr->genCoords(count,diametr);
+
+        if (gr->isVisible ())
+                {
+                          this->gr->genCoords(count,diametr);
+                }
+
 }
 
 //first hide/show element
@@ -256,7 +261,7 @@ void MainWindow::showSettingCapture(){
 
         this->setSartStopImegeGetting(false);
         disconnect(this->worker,SIGNAL(imageIsReady( IplImage*)),this,SLOT(imageGetting( IplImage*)));
-        connect (this->worker,SIGNAL(imageIsReady( IplImage*)),this->settingCaptureFrame,SLOT(imageGetting( IplImage*)));
+
 
 
         this->settingCaptureFrame->show();
