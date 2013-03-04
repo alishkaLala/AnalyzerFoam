@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingcaptureframe.ui'
 **
-** Created: Mon 4. Mar 01:06:38 2013
+** Created: Mon 4. Mar 22:40:24 2013
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,6 +14,9 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QCheckBox>
+#include <QtGui/QDoubleSpinBox>
+#include <QtGui/QFrame>
 #include <QtGui/QGridLayout>
 #include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
@@ -62,12 +65,20 @@ public:
     QPushButton *SettingApply;
     QPushButton *SettingCansel;
     QPushButton *SettingStandart;
+    QFrame *frame;
+    QGridLayout *gridLayout_5;
+    QPushButton *pushButton;
+    QCheckBox *checkBox;
+    QLabel *label_3;
+    QDoubleSpinBox *doubleSpinBox;
+    QDoubleSpinBox *doubleSpinBox_2;
+    QLabel *label_6;
 
     void setupUi(QWidget *SettingCaptureFrame)
     {
         if (SettingCaptureFrame->objectName().isEmpty())
             SettingCaptureFrame->setObjectName(QString::fromUtf8("SettingCaptureFrame"));
-        SettingCaptureFrame->resize(421, 474);
+        SettingCaptureFrame->resize(270, 659);
         gridLayout_4 = new QGridLayout(SettingCaptureFrame);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         groupBox_5 = new QGroupBox(SettingCaptureFrame);
@@ -183,7 +194,7 @@ public:
         pushButtonStart = new QPushButton(SettingCaptureFrame);
         pushButtonStart->setObjectName(QString::fromUtf8("pushButtonStart"));
 
-        gridLayout_4->addWidget(pushButtonStart, 5, 0, 1, 1);
+        gridLayout_4->addWidget(pushButtonStart, 6, 0, 1, 1);
 
         groupBox_4 = new QGroupBox(SettingCaptureFrame);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
@@ -205,7 +216,46 @@ public:
         verticalLayout_2->addWidget(SettingStandart);
 
 
-        gridLayout_4->addWidget(groupBox_4, 6, 0, 1, 1);
+        gridLayout_4->addWidget(groupBox_4, 7, 0, 1, 1);
+
+        frame = new QFrame(SettingCaptureFrame);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        gridLayout_5 = new QGridLayout(frame);
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        pushButton = new QPushButton(frame);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout_5->addWidget(pushButton, 0, 0, 1, 3);
+
+        checkBox = new QCheckBox(frame);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+
+        gridLayout_5->addWidget(checkBox, 0, 3, 1, 2);
+
+        label_3 = new QLabel(frame);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout_5->addWidget(label_3, 1, 0, 1, 1);
+
+        doubleSpinBox = new QDoubleSpinBox(frame);
+        doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
+
+        gridLayout_5->addWidget(doubleSpinBox, 1, 1, 1, 1);
+
+        doubleSpinBox_2 = new QDoubleSpinBox(frame);
+        doubleSpinBox_2->setObjectName(QString::fromUtf8("doubleSpinBox_2"));
+
+        gridLayout_5->addWidget(doubleSpinBox_2, 1, 4, 1, 1);
+
+        label_6 = new QLabel(frame);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+
+        gridLayout_5->addWidget(label_6, 1, 3, 1, 1);
+
+
+        gridLayout_4->addWidget(frame, 5, 0, 1, 1);
 
 
         retranslateUi(SettingCaptureFrame);
@@ -238,6 +288,10 @@ public:
         SettingApply->setText(QApplication::translate("SettingCaptureFrame", "\320\267\320\260\321\201\321\202\320\276\321\201\321\203\320\262\320\260\321\202\320\270 \320\275\320\260\320\273\320\260\321\210\321\202\321\203\320\262\320\260\320\275\320\275\321\217", 0, QApplication::UnicodeUTF8));
         SettingCansel->setText(QApplication::translate("SettingCaptureFrame", "\320\262\321\226\320\264\320\274\321\226\320\275\320\270\321\202\320\270 \320\275\320\260\320\273\320\260\321\210\321\202\321\203\320\262\320\260\320\275\320\275\321\217", 0, QApplication::UnicodeUTF8));
         SettingStandart->setText(QApplication::translate("SettingCaptureFrame", "\320\277\320\276 \320\267\320\260\320\274\320\276\320\262\321\207\321\203\320\262\320\260\320\275\320\275\321\216", 0, QApplication::UnicodeUTF8));
+        pushButton->setText(QApplication::translate("SettingCaptureFrame", "\320\267\320\274\321\226\320\275\320\270\321\202\320\270 \320\272\320\276\320\265\321\204\321\226\321\206\321\226\321\224\320\275\321\202\320\270", 0, QApplication::UnicodeUTF8));
+        checkBox->setText(QApplication::translate("SettingCaptureFrame", "\320\262\321\226\320\264\320\276\320\261\321\200\320\260\320\267\320\270\321\202\320\270", 0, QApplication::UnicodeUTF8));
+        label_3->setText(QApplication::translate("SettingCaptureFrame", "k1=", 0, QApplication::UnicodeUTF8));
+        label_6->setText(QApplication::translate("SettingCaptureFrame", "k2=", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

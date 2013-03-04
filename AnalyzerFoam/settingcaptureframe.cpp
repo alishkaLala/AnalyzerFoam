@@ -106,16 +106,9 @@ void SettingCaptureFrame::initSetting(){
 
 void SettingCaptureFrame::initialConnections()
 {
-        //connect(ui->lineEdit,SIGNAL(textEdited(QString)),this,SLOT(validMm()));
-        //connect(ui->lineEdit,SIGNAL(editingFinished()),this,SLOT(validMmAndSet()));
         connect(ui->lineEdit,SIGNAL(textEdited(QString)),this,SLOT(validMmAndSet()));
         connect(ui->lineEdit,SIGNAL(cursorPositionChanged(int,int)),this,SLOT(toolTipMm()));
-
-
-
-        connect(ui->widthCaptureWindow,SIGNAL(valueChanged(int)),this,SLOT(calculateCaptureSizeFrame(int)))  ;
         cvSetMouseCallback( this->nameCaptureFrame.toAscii().constData(),myMouseCallback, (void*)this->frame);
-        // connect (this->timerCapture, SIGNAL ( timeout () ), SLOT ( timerEvent_showCapture ( ) ) );
         connect(this,SLOT(hide()),this,SLOT(stopWork()));
 
 
